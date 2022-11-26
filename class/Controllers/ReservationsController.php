@@ -23,6 +23,7 @@ class ReservationsController
             );
 
             $html = 'Reservation créé avec succès.';
+            header('location:users.php');
         }
 
         return $html;
@@ -76,6 +77,7 @@ class ReservationsController
             );
             if ($isOk) {
                 $html = 'Reservation mis à jour avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la mise à jour de la reservation.';
             }
@@ -98,6 +100,7 @@ class ReservationsController
             $isOk = $reservationsService->deleteReservation($_POST['id']);
             if ($isOk) {
                 $html = 'Reservation supprimé avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la supression de la reservation.';
             }

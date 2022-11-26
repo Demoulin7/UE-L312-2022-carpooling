@@ -29,6 +29,7 @@ class AnnoncesController
             );
 
             $html = 'Annonce créé avec succès.';
+            header('location:users.php');
 
         }
 
@@ -95,6 +96,7 @@ class AnnoncesController
             );
             if ($isOk) {
                 $html = 'Annonce mis à jour avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la mise à jour de l\'annonce.';
             }
@@ -117,6 +119,7 @@ class AnnoncesController
             $isOk = $annoncesService->deleteAnnonce($_POST['id']);
             if ($isOk) {
                 $html = 'Annonce supprimé avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la supression de l\'annonce.';
             }

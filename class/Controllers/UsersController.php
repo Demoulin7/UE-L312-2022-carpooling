@@ -38,11 +38,13 @@ class UsersController
             }
             if ($userId && $isOk) {
                 $html = 'Utilisateur créé avec succès.';
+                header('location:users.php');
 
             } else {
                 $html = 'Erreur lors de la création de l\'utilisateur.';
             }
         }
+
 
         return $html;
     }
@@ -115,6 +117,7 @@ class UsersController
             );
             if ($isOk) {
                 $html = 'Utilisateur mis à jour avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la mise à jour de l\'utilisateur.';
             }
@@ -137,6 +140,7 @@ class UsersController
             $isOk = $usersService->deleteUser($_POST['id']);
             if ($isOk) {
                 $html = 'Utilisateur supprimé avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la supression de l\'utilisateur.';
             }

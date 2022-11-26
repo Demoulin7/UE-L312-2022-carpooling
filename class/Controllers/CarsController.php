@@ -37,6 +37,7 @@ class CarsController
             }
             if ($carId && $isOk) {
                 $html = 'Voiture créé avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la création de la voiture.';
             }
@@ -105,6 +106,7 @@ class CarsController
             );
             if ($isOk) {
                 $html = 'Voiture mis à jour avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la mise à jour de la voiture.';
             }
@@ -127,6 +129,7 @@ class CarsController
             $isOk = $carsService->deleteCar($_POST['id']);
             if ($isOk) {
                 $html = 'Voiture supprimé avec succès.';
+                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la supression de la voiture.';
             }
