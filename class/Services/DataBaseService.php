@@ -105,6 +105,10 @@ class DataBaseService
         $query = $this->connection->prepare($sql);
         $isOk = $query->execute($data);
 
+        $sql2 = 'DELETE FROM users_cars WHERE user_id = :id;';
+        $query2 = $this->connection->prepare($sql);
+        $isOk2 = $query2->execute($data);
+
         return $isOk;
     }
 

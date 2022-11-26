@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 26 nov. 2022 à 16:41
+-- Généré le : sam. 26 nov. 2022 à 17:15
 -- Version du serveur :  10.4.16-MariaDB
 -- Version de PHP : 7.4.12
 
@@ -64,7 +64,8 @@ INSERT INTO `cars` (`id`, `brand`, `model`, `color`, `nbrSlots`) VALUES
 (1, 'Skoda', 'Fabia', 'Noire', 5),
 (2, 'Huandai', 'Getz', 'Rouge', 5),
 (3, 'Mercedes', 'Classe C', 'Noire', 4),
-(4, 'Renaut', 'Zoé', 'Bleu', 2);
+(4, 'Renaut', 'Zoé', 'Bleu', 2),
+(12, 'Renaut', 'Laguna 2', 'Bleu', 4);
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `birthday`) VALUES
 (1, 'Vincent', 'Godé', 'hello@vincentgo.fr', '1990-11-08 00:00:00'),
 (2, 'Albert', 'Dupond', 'sonemail@gmail.com', '1985-11-08 00:00:00'),
-(3, 'Thomas', 'Dumoulin', 'sonemail2@gmail.com', '1985-10-08 00:00:00');
+(24, 'Eddy', 'Demoulin', 'test@outlook.fr', '2001-11-29 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -119,7 +120,7 @@ INSERT INTO `users_cars` (`user_id`, `car_id`) VALUES
 (1, 1),
 (1, 2),
 (2, 3),
-(3, 4);
+(24, 12);
 
 --
 -- Index pour les tables déchargées
@@ -171,7 +172,7 @@ ALTER TABLE `annonces`
 -- AUTO_INCREMENT pour la table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `reservations`
@@ -183,7 +184,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Contraintes pour les tables déchargées

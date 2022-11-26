@@ -140,7 +140,6 @@ class UsersController
             $isOk = $usersService->deleteUser($_POST['id']);
             if ($isOk) {
                 $html = 'Utilisateur supprimé avec succès.';
-                header('location:users.php');
             } else {
                 $html = 'Erreur lors de la supression de l\'utilisateur.';
             }
