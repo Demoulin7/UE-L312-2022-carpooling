@@ -6,6 +6,26 @@ use App\Entities\Car;
 
 class CarsService
 {
+
+    /**
+     * Create or update a car.
+     */
+    public function setCar(?string $id, string $brand, string $model, string $color, int $nbrSlots): string
+    {
+        $carId = '';
+
+        $dataBaseService = new DataBaseService();
+        if (empty($id)) {
+            $carId = $dataBaseService->createCar($brand, $model, $color, $nbrSlots);
+        } else {
+            $dataBaseService->updateCar($id, $brand, $model, $color, $nbrSlots);
+            $carId = $id;
+        }
+
+        return $carId;
+    }
+
+
     /**
      * Return all cars.
      */
@@ -28,5 +48,18 @@ class CarsService
         }
 
         return $cars;
+    }
+
+    /**
+     * Delete a car.
+     */
+    public function deleteCar(string $id): bool
+    {
+        $isOk = false;
+
+        $dataBaseService = new DataBaseService();
+        $isOk = $dataBaseService->deleteCar($id);
+
+        return $isOk;
     }
 }
