@@ -51,7 +51,17 @@ class UsersController
      */
     public function getUsers(): string
     {
-        $html = '';
+        $html = '
+            <tr class="table100-head">
+            <th class="column1">Id</th>
+            <th class="column2">Prenom</th>
+            <th class="column3">Nom</th>
+            <th class="column4">Email</th>
+            <th class="column5">Date de naissance</th>
+            <th class="column6">Voitures</th>
+            </tr>
+            </thead>
+            <tbody>';
 
         // Get all users :
         $usersService = new UsersService();
@@ -65,13 +75,16 @@ class UsersController
                     $carsHtml .= $car->getBrand() . ' ' . $car->getModel() . ' ' . $car->getColor() . ' ';
                 }
             }
+
             $html .=
-                '#' . $user->getId() . ' ' .
-                $user->getFirstname() . ' ' .
-                $user->getLastname() . ' ' .
-                $user->getEmail() . ' ' .
-                $user->getBirthday()->format('d-m-Y') . ' ' .
-                $carsHtml . '<br />';
+                '<tr>' .
+                '<td class="column1"> #' . $user->getId() . '</td>' .
+                '<td class="column2">' . $user->getFirstname() . '</td>' .
+                '<td class="column3">' . $user->getLastname() . '</td>' .
+                '<td class="column4">' . $user->getEmail() . '</td>' .
+                '<td class="column5">' . $user->getBirthday()->format('d-m-Y') . '</td>' .
+                '<td class="column6">' . $carsHtml . 
+                '</tr>';
         }
 
         return $html;

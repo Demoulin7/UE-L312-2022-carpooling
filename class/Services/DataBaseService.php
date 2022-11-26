@@ -12,7 +12,7 @@ class DataBaseService
     const PORT = '3306';
     const DATABASE_NAME = 'carpooling';
     const MYSQL_USER = 'root';
-    const MYSQL_PASSWORD = 'password';
+    const MYSQL_PASSWORD = '';
 
     private $connection;
 
@@ -109,6 +109,29 @@ class DataBaseService
     }
 
     /**
+     * Create a car.
+     */
+    public function createCar(string $brand, string $model, string $color, int $nbrSlots): string
+    {
+        $carId = '';
+
+        $data = [
+            'brand' => $brand,
+            'model' => $model,
+            'color' => $color,
+            'nbrSlots' => $nbrSlots,
+        ];
+        $sql = 'INSERT INTO cars (brand, model, color, nbrSlots) VALUES (:brand, :model, :color, :nbrSlots)';
+        $query = $this->connection->prepare($sql);
+        $isOk = $query->execute($data);
+        if ($isOk) {
+            $carId = $this->connection->lastInsertId();
+        }
+
+        return $carId;
+    }
+
+    /**
      * Return all cars.
      */
     public function getCars(): array
@@ -166,5 +189,80 @@ class DataBaseService
         }
 
         return $userCars;
+    }
+
+    /**
+     * Create an user.
+     */
+    public function createAnnonce(string $prix, string $trajet): string
+    {
+        $annonceId = '';
+
+        $data = [
+            'prix' => $prix,
+            'trajet' => $trajet,
+        ];
+        $sql = 'INSERT INTO users (prix, trajet) VALUES (:prix, :trajet)';
+        $query = $this->connection->prepare($sql);
+        $isOk = $query->execute($data);
+        if ($isOk) {
+            $annonceId = $this->connection->lastInsertId();
+        }
+
+        return $annonceId;
+    }
+
+    /**
+     * Return all annonces.
+     */
+    public function getAnnonces(): array
+    {
+        $annonces = [];
+
+        $sql = 'SELECT * FROM annonces';
+        $query = $this->connection->query($sql);
+        $results = $query->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($results)) {
+            $annonces = $results;
+        }
+
+        return $annonces;
+    }
+
+    /**
+     * Create an user.
+     */
+    public function createReservation(string $passagers): string
+    {
+        $reservationId = '';
+
+        $data = [
+            'passagers' => $passagers,
+        ];
+        $sql = 'INSERT INTO reservations (passagers) VALUES (:passagers)';
+        $query = $this->connection->prepare($sql);
+        $isOk = $query->execute($data);
+        if ($isOk) {
+            $reservationId = $this->connection->lastInsertId();
+        }
+
+        return $reservationId;
+    }
+
+    /**
+     * Return all reservations.
+     */
+    public function getReservations(): array
+    {
+        $reservations = [];
+
+        $sql = 'SELECT * FROM reservations';
+        $query = $this->connection->query($sql);
+        $results = $query->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($results)) {
+            $reservations = $results;
+        }
+
+        return $reservations;
     }
 }

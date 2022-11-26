@@ -1,0 +1,154 @@
+.site-header {
+    height: 75px;
+    padding: 0 50px;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    width: 100%;
+}
+
+.header-content {
+    display: grid;
+    max-width: 1325px;
+    margin: 0 auto;
+    height: 75px;
+}
+
+.main-nav {
+    display: flex;
+    height: inherit;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
+    padding: 0 4px 0 0;
+}
+
+.nav-menu ul li {
+    float: left;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu ul li>a {
+    font-weight: 600;
+    padding: 0 15px;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    align-self: center;
+    height: inherit;
+}
+
+.content {
+    position: relative;
+}
+
+.bdd {
+	display: flex;
+}
+
+.bdd section{
+	margin: 15px;
+	padding: 15px;
+	border: 2px black solid;
+}
+
+.button {
+	margin-top: 15px;
+	display: flex;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+section p {
+	display: flex;
+	justify-content: center;
+}
+
+.container-table100 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+}
+
+.wrap-table100 {
+    width: 1170px;
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+table thead tr {
+    height: 60px;
+    background: #36304a;
+}
+
+.table100-head th {
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+.column1 {
+    width: 100px;
+    text-align: center;
+}
+
+.column2 {
+    width: 160px;
+    text-align: center;
+}
+
+.column3 {
+    width: 160px;
+    text-align: center;
+}
+
+.column4 {
+    width: 110px;
+    text-align: center;
+}
+
+.column5 {
+    width: 170px;
+    text-align: center;
+}
+
+.column6 {
+    width: 222px;
+    text-align: left;
+
+tbody tr {
+    font-size: 15px;
+    color: gray;
+    line-height: 1.5;
+    font-weight: unset;
+}
