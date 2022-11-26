@@ -36,4 +36,24 @@ class Annonce
     {
         $this->trajet = $trajet;
     }
+
+    public function getUserName(): string
+    {
+        return $this->userName;
+    }
+
+    public function setUserName(string $userName): void
+    {
+        $this->userName = $userName;
+    }
+
+    public function getCarPlaces(): string
+    {
+        return $this->carPlaces;
+    }
+
+    public function setCarPlaces(string $carPlaces): void
+    {
+        $this->carPlaces = $carPlaces;
+    }
 }

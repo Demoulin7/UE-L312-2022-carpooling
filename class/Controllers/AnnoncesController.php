@@ -15,13 +15,17 @@ class AnnoncesController
 
         // If the form have been submitted :
         if (isset($_POST['prix']) &&
-            isset($_POST['trajet'])) {
+            isset($_POST['trajet']) &&
+            isset($_POST['userId']) &&
+            isset($_POST['carId'])) {
             // Create the annonce :
             $annoncesService = new AnnoncesService();
             $annonceId = $annoncesService->setAnnonce(
                 null,
                 $_POST['prix'],
-                $_POST['trajet']
+                $_POST['trajet'],
+                $_POST['userId'],
+                $_POST['carId']
             );
 
             $html = 'Annonce créé avec succès.';
@@ -41,6 +45,8 @@ class AnnoncesController
             <th class="column1">Id</th>
             <th class="column2">Prix</th>
             <th class="column3">Trajet</th>
+            <th class="column4">Utilisateur</th>
+            <th class="column5">Voiture</th>
             </tr>
             </thead>
             <tbody>';
@@ -57,6 +63,8 @@ class AnnoncesController
                 '<td class="column1"> #' . $annonce->getId() . '</td>' .
                 '<td class="column2">' . $annonce->getPrix() . '</td>' .
                 '<td class="column3">' . $annonce->getTrajet() . '</td>' .
+                '<td class="column4">' . $annonce->getUserName() . '</td>' .
+                '<td class="column5">' . $annonce->getCarPlaces() . '</td>' .
                 '</tr>';
         }
 
@@ -73,13 +81,17 @@ class AnnoncesController
         // If the form have been submitted :
         if (isset($_POST['id']) &&
             isset($_POST['prix']) &&
-            isset($_POST['trajet'])) {
+            isset($_POST['trajet']) &&
+            isset($_POST['userId']) &&
+            isset($_POST['carId'])) {
             // Update the annonce :
             $annoncesService = new AnnoncesService();
             $isOk = $annoncesService->setAnnonce(
                 $_POST['id'],
                 $_POST['prix'],
-                $_POST['trajet']
+                $_POST['trajet'],
+                $_POST['userId'],
+                $_POST['carId']
             );
             if ($isOk) {
                 $html = 'Annonce mis à jour avec succès.';

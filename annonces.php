@@ -63,6 +63,12 @@ include("header.php");
                 <label for="trajet">Trajet (A=>B) :</label>
                 <input type="text" name="trajet">
                 <br />
+                <label for="userName">UserName :</label>
+                <input type="text" name="userName">
+                <br />
+                <label for="carPlaces">CarPlaces :</label>
+                <input type="text" name="carPlaces">
+                <br />
                 <input type="submit" value="Créer une annonce" class="button">
             </form>
 
@@ -110,6 +116,12 @@ include("header.php");
                 <br />
                 <label for="trajet">Trajet (A=>B) :</label>
                 <input type="text" name="trajet">
+                <br />
+                <label for="userId">UserId :</label>
+                <input type="text" name="userId">
+                <br />
+                <label for="carId">CarId :</label>
+                <input type="text" name="carId">
                 <br />
                 <input type="submit" value="Modifier l annonce" class="button">
             </form>

@@ -201,6 +201,8 @@ class DataBaseService
         $data = [
             'prix' => $prix,
             'trajet' => $trajet,
+            'userId' => $userId,
+            'carId' => $carId
         ];
         $sql = 'INSERT INTO users (prix, trajet) VALUES (:prix, :trajet)';
         $query = $this->connection->prepare($sql);
@@ -219,7 +221,7 @@ class DataBaseService
     {
         $annonces = [];
 
-        $sql = 'SELECT * FROM annonces';
+        $sql = 'SELECT * FROM annonces INNER JOIN users ON annonces.userId = users.id INNER JOIN cars ON annonces.carId = cars.id';
         $query = $this->connection->query($sql);
         $results = $query->fetchAll(PDO::FETCH_ASSOC);
         if (!empty($results)) {
