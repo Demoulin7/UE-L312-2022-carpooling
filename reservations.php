@@ -72,27 +72,6 @@ include("header.php");
                 require __DIR__ . '/vendor/autoload.php';
 
                 $controller = new ReservationsController();
-                echo $controller->deleteReservation();
-
-            ?>
-
-            <p>Supression d'une reservation</p>
-            <form method="post" action="reservations.php" name ="reservationsDeleteForm">
-                <label for="id">Id :</label>
-                <input type="text" name="id">
-                <br />
-                <input type="submit" value="Supprimer une reservation" class="button">
-            </form>
-
-        </section>
-
-        <section>
-            
-            <?php
-
-                require __DIR__ . '/vendor/autoload.php';
-
-                $controller = new ReservationsController();
                 echo $controller->updateReservation();
 
             ?>
@@ -106,6 +85,27 @@ include("header.php");
                 <input type="text" name="places">
                 <br />
                 <input type="submit" value="Modifier la reservation" class="button">
+            </form>
+
+        </section>
+
+        <section>
+            
+            <?php
+
+                require __DIR__ . '/vendor/autoload.php';
+
+                $controller = new ReservationsController();
+                echo $controller->deleteReservation();
+
+            ?>
+
+            <p>Supression d'une reservation</p>
+            <form method="post" action="reservations.php" name ="reservationsDeleteForm">
+                <label for="id">Id :</label>
+                <input type="text" name="id">
+                <br />
+                <input type="submit" value="Supprimer une reservation" class="button">
             </form>
 
         </section>

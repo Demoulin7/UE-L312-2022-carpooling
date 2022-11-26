@@ -81,27 +81,6 @@ include("header.php");
                 require __DIR__ . '/vendor/autoload.php';
 
                 $controller = new AnnoncesController();
-                echo $controller->deleteAnnonce();
-
-            ?>
-
-            <p>Supression d'une annonce</p>
-            <form method="post" action="annonces.php" name ="annoncesDeleteForm">
-                <label for="id">Id :</label>
-                <input type="text" name="id">
-                <br />
-                <input type="submit" value="Supprimer une annonce" class="button">
-            </form>
-
-        </section>
-
-        <section>
-            
-            <?php
-
-                require __DIR__ . '/vendor/autoload.php';
-
-                $controller = new AnnoncesController();
                 echo $controller->updateAnnonce();
 
             ?>
@@ -124,6 +103,28 @@ include("header.php");
                 <input type="text" name="carId">
                 <br />
                 <input type="submit" value="Modifier l annonce" class="button">
+            </form>
+
+        </section>
+
+
+        <section>
+            
+            <?php
+
+                require __DIR__ . '/vendor/autoload.php';
+
+                $controller = new AnnoncesController();
+                echo $controller->deleteAnnonce();
+
+            ?>
+
+            <p>Supression d'une annonce</p>
+            <form method="post" action="annonces.php" name ="annoncesDeleteForm">
+                <label for="id">Id :</label>
+                <input type="text" name="id">
+                <br />
+                <input type="submit" value="Supprimer une annonce" class="button">
             </form>
 
         </section>

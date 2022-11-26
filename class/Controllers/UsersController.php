@@ -38,6 +38,7 @@ class UsersController
             }
             if ($userId && $isOk) {
                 $html = 'Utilisateur créé avec succès.';
+
             } else {
                 $html = 'Erreur lors de la création de l\'utilisateur.';
             }

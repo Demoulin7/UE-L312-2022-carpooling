@@ -81,27 +81,6 @@ include("header.php");
                 require __DIR__ . '/vendor/autoload.php';
 
                 $controller = new CarsController();
-                echo $controller->deleteCar();
-
-            ?>
-
-            <p>Supression d'une voiture</p>
-            <form method="post" action="cars.php" name ="carsDeleteForm">
-                <label for="id">Id :</label>
-                <input type="text" name="id">
-                <br />
-                <input type="submit" value="Supprimer une voiture" class="button">
-            </form>
-
-        </section>
-
-        <section>
-            
-            <?php
-
-                require __DIR__ . '/vendor/autoload.php';
-
-                $controller = new CarsController();
                 echo $controller->updateCar();
 
             ?>
@@ -124,6 +103,27 @@ include("header.php");
                 <input type="text" name="nbrSlots">
                 <br />
                 <input type="submit" value="Modifier la voiture" class="button">
+            </form>
+
+        </section>
+
+        <section>
+            
+            <?php
+
+                require __DIR__ . '/vendor/autoload.php';
+
+                $controller = new CarsController();
+                echo $controller->deleteCar();
+
+            ?>
+
+            <p>Supression d'une voiture</p>
+            <form method="post" action="cars.php" name ="carsDeleteForm">
+                <label for="id">Id :</label>
+                <input type="text" name="id">
+                <br />
+                <input type="submit" value="Supprimer une voiture" class="button">
             </form>
 
         </section>
